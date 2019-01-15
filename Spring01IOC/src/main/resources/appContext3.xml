@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.1.xsd">
+
+	<bean id="conOut" class="ex05.ConsolOutputter" >
+		<property name="path" value="C:/myjava/spring.txt" />
+	</bean>
+	<bean id="fileOut" class="ex05.FileOutputter" >
+		<property name="path" value="C:/myjava/spring.txt" />
+	</bean>
+	
+	<bean id="mb" class="ex05.MessageBeanImpl">
+		<property name="out" ref="fileOut" />
+		<property name="msg" value="새복많" />
+		<property name="money" value="10000" />
+	</bean>
+
+</beans>

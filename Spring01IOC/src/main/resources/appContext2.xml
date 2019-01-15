@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.1.xsd">
+
+	<!-- Setter Injection : setter를 통해 값을 주입하는 방법 -->
+	<bean id="mb1" class="ex04.MessageBeanImpl" >
+		<property name="greeting">
+			<value>반가워요~</value>
+		</property>
+		<property name="name" value="길동" />
+	</bean>
+	
+	<bean id="mb2" class="ex04.MessageBeanImpl" >
+		<constructor-arg index="0" type="java.lang.String">
+			<value>새해 복 많이 받아</value>
+		</constructor-arg>
+		<constructor-arg index="1" type="int" >
+			<value>100000</value>
+		</constructor-arg>
+		<property name="greeting" value="hi" />
+		<property name="name" value="gildong" />
+	</bean>
+	
+	<bean id="day" class="java.util.Date"></bean>
+
+	<bean id="mb3" class="ex04.MessageBeanImpl">
+		<property name="greeting" value="hi" />
+		<property name="name" value="태양" />
+		<property name="today" ref="day" />
+	</bean>
+	
+	
+
+</beans>
